@@ -121,11 +121,13 @@ const TestimonialsPage = () => {
     const handleCopyAndRedirect = async (text) => {
         try {
             await navigator.clipboard.writeText(text);
-            window.open("https://www.linkedin.com/feed/?createPost=true", "_blank");
+            // Redirect to LinkedIn new article page
+            window.open("https://www.linkedin.com/post/new/", "_blank");
         } catch (err) {
             console.error("Failed to copy text: ", err);
         }
     };
+
 
     return (
         <div className="min-h-screen bg-gray-50 p-6">
@@ -188,6 +190,15 @@ const TestimonialsPage = () => {
                     </div>
                 </div>
             )}
+            <footer className="bg-white py-6 border-t text-center mt-10">
+                <h2 className="text-xl font-bold mb-2">Thank You!</h2>
+                <p className="text-gray-600 max-w-3xl mx-auto px-4">
+                    Thank you for sharing our story on LinkedIn! Your support helps spread
+                    the word about <span className="font-semibold">@Welzin</span> and{" "}
+                    <span className="font-semibold">@TheImpunjab</span>’s impact at Punjab
+                    Startup Fair 2.0. Come back to share another testimonial!
+                </p>
+            </footer>
         </div>
     );
 };
