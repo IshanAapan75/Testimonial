@@ -122,7 +122,7 @@ const TestimonialsPage = () => {
         try {
             await navigator.clipboard.writeText(text);
             // Redirect to LinkedIn new article page
-            window.open("https://www.linkedin.com/post/new/", "_blank");
+            window.open("https://www.linkedin.com/feed/?shareActive=true", "_blank");
         } catch (err) {
             console.error("Failed to copy text: ", err);
         }
